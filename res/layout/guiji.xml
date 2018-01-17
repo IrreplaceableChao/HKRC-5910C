@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDCDC"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:fadingEdge="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="740dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/gjcl1"
+                android:id="@+id/image_01"/>
+
+            <ImageView
+                android:id="@+id/image_02"
+                android:layout_width="match_parent"
+                android:layout_height="1450dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/gjcl2" />
+
+            <ImageView
+                android:id="@+id/image_03"
+                android:layout_width="match_parent"
+                android:layout_height="850dp"
+                android:src="@drawable/gjcl3" />
+            <ImageView
+                android:id="@+id/image_04"
+                android:layout_width="match_parent"
+                android:layout_height="1300dp"
+                android:src="@drawable/gjcl4" />
+            <ImageView
+                android:id="@+id/image_05"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:src="@drawable/gjcl5" />
+            <ImageView
+                android:id="@+id/image_06"
+                android:layout_width="match_parent"
+                android:layout_height="720dp"
+                android:src="@drawable/gjcl6" />
+            <ImageView
+                android:id="@+id/image_07"
+                android:layout_width="match_parent"
+                android:layout_height="1240dp"
+                android:src="@drawable/gjcl7" />
+            <ImageView
+                android:id="@+id/image_08"
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:src="@drawable/gjcl8" />
+            <ImageView
+                android:id="@+id/image_09"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:src="@drawable/gjcl9" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#292421"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/gui"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/houtui" />
+
+        <TextView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/fenge" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="轨迹测量"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bz"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>

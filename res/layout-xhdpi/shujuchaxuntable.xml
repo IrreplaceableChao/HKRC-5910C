@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/topline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+              android:layout_width="0dip"
+                android:layout_height="50dp"
+                android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/quxiaoall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_tab_btn_mid"
+                android:textColor="#ffffff"
+                 android:text="取消选中数据"
+                android:textSize="17dp" 
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/xuanzhongall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_tab_btn_mid"
+                android:text="选中全部数据"
+                android:textColor="#ffffff"
+                android:textSize="17dp" 
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_btn_mid"
+            android:enabled="false"
+            android:text="删除选中数据"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/fanhuichaxun"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_btn_mid"
+            android:text="返回查询"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_weight="1"
+        android:fadeScrollbars="false">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:background="#DBDFE3"
+                android:minHeight="25dip"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#DBDFE3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="50dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="选中"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="80dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="钻孔用途"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="60dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="钻孔类型"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="71dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="工作面"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="80dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="钻场"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="80dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="孔号"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="80dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="选点日期"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:layout_width="80dip"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_top_third"
+                        android:gravity="center"
+                        android:text="测量次数"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="10dp"
+                android:background="#DCDCDC"
+                android:gravity="center"
+                android:text="上一级"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/scroll_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="#7B858E"
+                android:dividerHeight="1px"
+                android:fadingEdge="none"
+                android:fastScrollEnabled="true"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

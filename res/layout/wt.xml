@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDCDC"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#292421"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/zi"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/houtui" />
+
+        <TextView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/fenge" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="问题解答"
+            android:textColor="#FFFFFF" />
+        
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bz"
+            android:textColor="#FFFFFF" />
+        
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:fadingEdge="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1500dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/wtjd1"
+                android:id="@+id/image_01"/>
+
+            <ImageView
+                android:id="@+id/image_02"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/wtjd2" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

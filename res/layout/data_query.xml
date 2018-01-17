@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+     android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_space_default_size"
+        android:text="查询条件"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/main_text_default_size"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+            android:id="@+id/radiops1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/radioquan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="30dp"
+            android:text="全部数据"
+          	 android:checked="true"
+            android:textColor="@color/text_color"
+            android:textSize="20dp" />
+   
+<RadioButton
+                android:id="@+id/radiotiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
+                android:layout_marginTop="30dp"
+                android:text="按条件查询："
+                 
+                android:textSize="20dp" 
+                android:textColor="@color/text_color" />
+       </RadioGroup>
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        
+<RadioGroup
+            android:id="@+id/radiops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        
+        <RadioButton
+            android:id="@+id/radioping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:checked="true"
+            android:textSize="20dp" 
+            android:text="平行孔"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:id="@+id/radioshan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp" 
+            android:text="扇形孔"
+            android:textColor="@color/text_color" />
+        </RadioGroup>
+    </LinearLayout>
+ <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按工作面查询："
+            android:textColor="@color/text_color"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/jinghao"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp" >
+
+ 
+     
+
+
+     <requestFocus />
+ </EditText>
+
+        </LinearLayout>
+        
+ 
+ <LinearLayout
+     
+     android:id="@+id/zuan_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" 
+            android:visibility="gone"
+            >
+
+
+
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按钻场查询　："
+            android:textColor="@color/text_color"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/zuanchang"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp" >
+
+
+
+
+     <requestFocus />
+ </EditText>
+
+        </LinearLayout>
+ 
+    <LinearLayout
+        android:id="@+id/kongquery"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按孔号查询　："
+            android:textColor="@color/text_color"
+            android:textSize="20dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/konghao"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp" >
+
+        </EditText>
+       
+    </LinearLayout>
+   
+</LinearLayout>
+    
+   <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:textSize="@dimen/detect_text_default_size" >
+
+        <Button
+            android:id="@+id/chaxun"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="查询数据"
+            android:textSize="@dimen/main_btn_default_size" />
+
+        <Button
+            android:id="@+id/fanhuizhuye"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="返回主页"
+            android:textSize="@dimen/main_btn_default_size" />
+    </LinearLayout>
+
+</LinearLayout>

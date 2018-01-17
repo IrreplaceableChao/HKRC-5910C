@@ -1,0 +1,217 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+              android:background="#DCDCDC"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+    android:orientation="vertical" >
+
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+          <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钻孔用途:"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+        <TextView
+            android:id="@+id/tv_use"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="瓦斯抽(采)"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钻孔类型:"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:text="扇形孔"
+            android:textSize="14dp"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作面:"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:id="@+id/tv_workspace"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:text="111111"
+            android:textSize="14dp"
+            android:gravity="center_horizontal"/>
+
+              <LinearLayout
+                  android:id="@+id/LL_farm"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="钻场:"
+                      android:textColor="#000000"
+                      android:textSize="14dp"
+                      android:layout_marginLeft="15dp" />
+
+                  <TextView
+                      android:id="@+id/tv_farm"
+                      android:layout_width="50dp"
+                      android:layout_height="wrap_content"
+                      android:background="#ffffff"
+                      android:textColor="#000000"
+                      android:text="1"
+                      android:textSize="14dp"
+                      android:gravity="center_horizontal"/>
+              </LinearLayout>
+
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="孔号:"
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:layout_marginLeft="15dp"
+                  android:id="@+id/textView8"/>
+
+              <TextView
+            android:id="@+id/tv_namber"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:text="1"
+            android:textSize="14dp"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
+          <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测量日期:"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="2016-12-06"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:gravity="center_horizontal"/>
+
+
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="设计倾角(°):"
+                  android:layout_marginLeft="14dp"
+                  android:textColor="#000000"
+                  android:textSize="14dp" />
+
+              <TextView
+                  android:id="@+id/tv_qinjiao"
+                  android:layout_width="54dp"
+                  android:layout_height="wrap_content"
+                  android:text="360.00"
+                  android:background="#ffffff"
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:gravity="center_horizontal"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=""
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:gravity="center_horizontal"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="14dp"
+                  android:text="设计方位角(°):"
+                  android:textColor="#000000"
+                  android:textSize="14dp" />
+
+              <TextView
+              android:id="@+id/tv_fangwei"
+              android:layout_width="54dp"
+              android:layout_height="wrap_content"
+              android:text="0"
+              android:background="#ffffff"
+              android:textColor="#000000"
+              android:textSize="14dp"
+              android:gravity="center_horizontal"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=""
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:gravity="center_horizontal"/>
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="14dp"
+                  android:text="设计孔深(m):"
+                  android:textColor="#000000"
+                  android:textSize="14dp" />
+
+              <TextView
+                  android:id="@+id/tv_kongshen"
+                  android:layout_width="68dp"
+                  android:layout_height="wrap_content"
+                  android:text="0"
+                  android:background="#ffffff"
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:gravity="center_horizontal"/>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=""
+                  android:textColor="#000000"
+                  android:textSize="14dp"
+                  android:gravity="center_horizontal"/>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

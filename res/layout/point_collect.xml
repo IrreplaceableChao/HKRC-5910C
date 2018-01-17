@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/main_bg"
+              android:gravity="center_horizontal"
+              android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/rg_pointtab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_ensure_method"
+            style="@style/main_tab_bottom"
+            android:background="@drawable/bg_tab_btn"
+            android:checked="true"
+            android:gravity="center"
+            android:text="选点方法"
+            android:textSize="@dimen/detect_text_default_size"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_ensure_point"
+            style="@style/main_tab_bottom"
+            android:background="@drawable/bg_tab_btn_mid"
+            android:gravity="center"
+            android:text="确定采集点"
+            android:textSize="@dimen/detect_text_default_size"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_point_preview"
+            style="@style/main_tab_bottom"
+            android:background="@drawable/bg_tab_btn"
+            android:gravity="center"
+            android:text="采集点预览"
+            android:textSize="@dimen/detect_text_default_size"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:flipInterval="1000"
+        android:inAnimation="@anim/push_left_in"
+        android:outAnimation="@anim/push_left_out"
+        android:persistentDrawingCache="animation" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/main_space_default_size"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="孔深生成方式:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_measure_method"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="测量方式:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/qiks1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:text="起测点孔深:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/qiks2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:text="选点间隔:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/main_space_default_size"
+                    android:orientation="vertical" >
+
+                    <RadioGroup
+                        android:id="@+id/rg_point_manual_auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal" >
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/rg_deep_manual_auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb_deepmanual"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="手动"
+                            android:checked="false"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_deepauto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="自动"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/rg_measure_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb_toup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="起钻"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_todown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="钻进"
+                            android:textColor="@color/text_color"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/et_start_deep"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:numeric="decimal"
+                            android:text="3.0"
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size" >
+
+                            <requestFocus />
+
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/qiks3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="米"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/et_measure_interval"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:numeric="decimal"
+                            android:text="1.5"
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size" />
+
+                        <TextView
+                            android:id="@+id/qiks4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="米"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_quit_pointcollect"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:text="工作交接"
+                android:textSize="@dimen/main_btn_default_size"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/main_space_default_size"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:text="仪器工作状态:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_remaintime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="剩余延时时间:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="当前时间:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_deepmanualinput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="人工输入孔深:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/point_text_default_size"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/main_space_default_size"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_jiaozhun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="孔深校准:"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/point_text_default_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/et_jiaozhun"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:numeric="decimal"
+                            android:text="" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/main_space_default_size"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_ensurepoint_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="20dp"
+                        android:text="无效状态"
+                        android:textColor="@color/warn_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_remain_time"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="@dimen/main_space_default_size"
+                        android:max="100"
+                        android:progress="100" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <com.android.utils.TimerTextView
+                            android:id="@+id/timer_text_view"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp"
+                            android:gravity="center_horizontal"
+                            android:text="倒计时"
+                            android:textColor="@color/warn_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_cur_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="12dp"
+                        android:text="01:02:15"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_deepmanualinput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/et_valid_deep"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:numeric="decimal"
+                            android:text=""
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:text="米"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioGroup
+                            android:id="@+id/MYSCeng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <RadioButton
+                                android:id="@+id/Mceng"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="7dp"
+                                android:text="煤"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold" />
+
+                            <RadioButton
+                                android:id="@+id/YSceng"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="7dp"
+                                android:text="岩"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold" />
+                        </RadioGroup>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="center_horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_jg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="60dp"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="40dp"
+                                android:padding="@dimen/main_padding_default_size"
+                                android:text="稳定钻具，勿动！"
+                                android:textColor="@color/warn_color"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/btn_ensure_point"
+                                android:layout_width="240dp"
+                                android:layout_height="180dp"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="10dp"
+                                android:enabled="false"
+                                android:padding="@dimen/main_padding_default_size"
+                                android:text="稳定钻具
+                                                                                                  确定采集点"
+                                android:textColor="#FF0000"
+                                android:textSize="25dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_next_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="220dp"
+                                android:layout_marginTop="49dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5px"
+                        android:background="#000000"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:text="序号"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:gravity="center"
+                            android:text="孔深"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:gravity="center"
+                            android:text="选点时间"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:text="方式"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:text="备注"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0.5px"
+                            android:layout_height="fill_parent"
+                            android:background="#000000"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5px"
+                        android:background="#000000"
+                        android:visibility="visible" />
+
+                    <ListView
+                        android:id="@+id/lv_pre_valid_point"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:cacheColorHint="#00000000" >
+                    </ListView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5px"
+                        android:background="#000000"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/jiaozhun"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="校准末行孔深"
+                        android:textSize="@dimen/main_btn_default_size"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5px"
+                android:background="#000000"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="序号"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/detect_text_default_size"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:text="孔深"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/detect_text_default_size"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center"
+                    android:text="选点时间"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/detect_text_default_size"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="方式"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/detect_text_default_size"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="备注"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/detect_text_default_size"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0.5px"
+                    android:layout_height="fill_parent"
+                    android:background="#000000"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5px"
+                android:background="#000000"
+                android:visibility="visible" />
+
+            <ListView
+                android:id="@+id/lv_valid_point"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:cacheColorHint="#00000000" >
+            </ListView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5px"
+                android:background="#000000"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_shanchu"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="删除末行"
+                    android:textSize="@dimen/main_btn_default_size" />
+
+                <Button
+                    android:id="@+id/btn_quit_pointpreview"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="结束选点"
+                    android:textSize="@dimen/main_btn_default_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </ViewFlipper>
+
+</LinearLayout>

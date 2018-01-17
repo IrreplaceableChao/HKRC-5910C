@@ -1,0 +1,216 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.antiexplosionphone"
+    android:versionCode="1"
+    android:versionName="6.1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+ 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
+    <application
+        
+        android:icon="@drawable/ic_launcher"
+        android:label="轨迹测量"
+      android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name=".Propaganda"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 主界面模块 -->
+        <activity
+            android:name=".Main"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 自检模块 -->
+        <activity
+            android:name=".Self_Detection"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 设置启动模块 -->
+        <activity
+            android:name=".Set_Start"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 确定有效点模块 -->
+        <activity
+            android:name=".Point_Collect"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 数据接收模块 -->
+        <activity
+            android:name=".Data_Receive"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 探管适配模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Leaning_PipeAdapter"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 数据查询模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Data_Query"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <!-- 软件帮助模块 -->
+        <activity
+            android:name="com.android.help.Help"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.RuanJian"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Guiji"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.QdyxD"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.SzqD"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.SjcX"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Zijian"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.JJ"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.FF"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.XD"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.YL"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.JZ"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.QZJZ"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Cly"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Rscly"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Wt"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Lx"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.TX"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.FS"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.SJian"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.SM"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.JX"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.JXSM"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.SB"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.HG"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.android.help.CPTD"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+          <activity
+            android:name="com.android.help.JDZB"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+           <activity
+            android:name="com.android.help.CLSY"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+           <activity
+            android:name="com.android.help.Tgsp"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+           <activity
+            android:name="com.android.help.Sjjs"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 软件设置模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Soft_Config"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.android.utils.ShowDataTableActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.android.bluetooth.BluetoothClientService" />
+    </application>
+
+</manifest>

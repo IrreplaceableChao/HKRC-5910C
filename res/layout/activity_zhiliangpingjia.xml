@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#DCDCDC"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="设计及评价参数"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#200040"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="工作面:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <TextView
+                android:id="@+id/text_0"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="工作面"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_text_1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="钻场:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/textView5"/>
+
+            <TextView
+                android:id="@+id/text_1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textColor="#000000"
+                android:text="孔号"
+                android:textSize="@dimen/textsize"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="孔号:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/textView"/>
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="钻场"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="设计倾角:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                android:id="@+id/textView9"/>
+
+            <EditText
+                android:id="@+id/text_3"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="3"
+                android:textSize="@dimen/textsize"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="°"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="设计方位角:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_4"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="3"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                android:textSize="@dimen/textsize"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="°"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+
+                android:text="设计孔深:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"/>
+
+            <EditText
+                android:id="@+id/text_5"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="200"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                android:textSize="@dimen/textsize"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="m"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许上下偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_6"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                android:text="3"
+                android:textSize="@dimen/textsize"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="m"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许左右偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_7"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="3"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                android:textSize="@dimen/textsize"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="m"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许终孔偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"/>
+
+            <EditText
+                android:id="@+id/text_8"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:text="5"
+                android:imeOptions="flagNoExtractUi"
+                android:numeric="integer"
+                android:textSize="@dimen/textsize"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="m"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:textSize="@dimen/textsize"
+            android:layout_gravity="center"
+            android:text="钻孔轨迹及质量评价"/>
+</LinearLayout>

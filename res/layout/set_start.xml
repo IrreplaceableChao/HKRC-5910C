@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_bg"
+                android:gravity="center_horizontal"
+    >
+
+
+    <TextView
+        android:id="@+id/shezhiqidong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/title_set_start"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/main_text_default_size"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/shezhiqidong"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false">
+
+        <RelativeLayout
+            android:id="@+id/YCLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+                android:id="@+id/jibencanshu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/FZCYCai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="用途："
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <RadioButton
+                        android:id="@+id/FZshui"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="防治水"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <RadioButton
+                        android:id="@+id/YCCai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="瓦斯抽采"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/BMCYCai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="类型："
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <RadioButton
+                        android:id="@+id/BMceng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="平行孔"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <RadioButton
+                        android:id="@+id/YCai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="扇形孔　"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="工 作 面:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/et_face"
+                        android:layout_width="171dp"
+                        android:layout_height="wrap_content"
+                        android:text="40807"
+                        android:textColor="@color/value_color"
+                        android:textSize="@dimen/setstart_edit_default_size"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_drilling"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="钻      场:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/et_drilling"
+                        android:layout_width="172dp"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/value_color"
+                        android:textSize="@dimen/setstart_edit_default_size"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="孔      号:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/et_deepnum"
+                        android:layout_width="172dp"
+                        android:layout_height="wrap_content"
+                        android:numeric="integer"
+                        android:text="1"
+                        android:textColor="@color/value_color"
+                        android:textSize="@dimen/setstart_edit_default_size"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shejicanshu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jibencanshu">
+
+                <include layout="@layout/chao_shezhi"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/celiangcanshu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shejicanshu">
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/shape"
+                    android:orientation="vertical"
+                    android:paddingTop="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="孔深强制校准间隔:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="每采集"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/et_jiaozhun"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:numeric="integer"
+                            android:text="10"
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="个点校准一次"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="延时时间:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/et_delaytime"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.05"
+                            android:maxLength="4"
+                            android:numeric="integer"
+                            android:text="1"
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg_minute_hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_minute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="分钟"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="小时"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numeric="integer"
+                        android:text="间隔时间:"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/detect_text_default_size"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/et_intervaltime"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.01"
+                            android:maxLength="4"
+                            android:numeric="integer"
+                            android:text="2"
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/setstart_edit_default_size"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:text="秒"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="可采集数据时间："
+                            android:textColor="@color/value_color"
+                            android:textSize="@dimen/detect_text_default_size"
+                            android:textStyle="bold"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/tv_xiaoshi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/warn_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="@color/warn_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_fen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/warn_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="@color/warn_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_tian"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/warn_color"
+                                android:textSize="@dimen/detect_text_default_size"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="#FFFFFF"
+                    android:text="测量参数"
+                    android:textColor="@color/title_color"
+                    android:textSize="24dp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/celiangcanshu"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:textSize="@dimen/detect_text_default_size">
+
+                <Button
+                    android:id="@+id/btn_set_start"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="确定并启动"
+                    android:textSize="@dimen/main_btn_default_size"/>
+
+                <Button
+                    android:id="@+id/btn_back_menu"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="返回主页"
+                    android:textSize="@dimen/main_btn_default_size"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                android:text="基本参数"
+                android:textColor="@color/title_color"
+                android:textSize="24dp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

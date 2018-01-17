@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title_color">#200040</color>
+    <color name="main_bg">#FFFFFF</color>
+    <color name="text_color">#404040</color>
+    <color name="value_color">#000000</color>
+    <color name="warn_color">#FF0000</color>
+    <color name="pingjia">#817F80</color>
+    <color name="touming">#00000000</color>
+
+</resources>

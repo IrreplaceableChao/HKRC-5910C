@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#DCDCDC"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="轨迹曲线"
+            android:textSize="18dp"
+            android:id="@+id/button"/>
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="钻孔质量评价"
+            android:id="@+id/button2"/>
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="返回"
+            android:id="@+id/button3"/>
+        <TextView
+            android:id="@+id/Long_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钻孔轨迹数据"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="bottom"
+            android:textColor="#200040"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_color"
+        android:layout_marginBottom="4dp"/>
+
+    <include android:id="@+id/include1" layout="@layout/nigu_main"></include>
+
+    <include android:id="@+id/include"  layout="@layout/scrollview"></include>
+</LinearLayout>

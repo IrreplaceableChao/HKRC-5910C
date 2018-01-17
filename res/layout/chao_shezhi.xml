@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+              android:orientation="vertical"
+                android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_sheji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="设计倾角:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_3"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:text="3"
+                android:inputType="numberDecimal|numberSigned"
+                android:textSize="@dimen/textsize"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="度"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="设计方位角:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_4"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="3"
+                android:textSize="@dimen/textsize"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="度"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+
+                android:text="设计孔深:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"/>
+
+            <EditText
+                android:id="@+id/text_5"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="200"
+                android:textSize="@dimen/textsize"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="米"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_pingjia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_sheji"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许上下偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_6"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="3"
+                android:textSize="@dimen/textsize"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="米"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许左右偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+            <EditText
+                android:id="@+id/text_7"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="3"
+                android:textSize="@dimen/textsize"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="米"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="允许终孔偏差:"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"/>
+
+            <EditText
+                android:id="@+id/text_8"
+                android:layout_width="@dimen/Set_Start"
+                android:layout_height="48dp"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="5"
+                android:textSize="@dimen/textsize"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="米"
+                android:textColor="#000000"
+                android:textSize="@dimen/textsize"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:background="#FFFFFF"
+        android:text="设计参数"
+        android:textColor="@color/title_color"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="194dp"
+    android:background="#FFFFFF"
+    android:text="评价参数"
+    android:textColor="@color/title_color"
+    android:textSize="24dp"
+    android:textStyle="bold"/>
+</RelativeLayout>
+</LinearLayout>

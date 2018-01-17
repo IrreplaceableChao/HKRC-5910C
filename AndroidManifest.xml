@@ -1,0 +1,153 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.antiexplosionphone" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+ 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
+    <application
+        android:name="com.android.utils.MyApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="轨迹测量"
+
+      android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name=".Propaganda"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
+
+        <!-- 主界面模块 -->
+        <activity
+            android:name=".Main"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+
+        </activity>
+
+        <!-- 自检模块 -->
+        <activity
+            android:name=".Self_Detection"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 设置启动模块 -->
+        <activity
+            android:name=".Set_Start"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 确定有效点模块 -->
+        <activity
+            android:name=".Point_Collect"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 数据接收模块 -->
+        <activity
+            android:name=".Data_Receive"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 探管适配模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Leaning_PipeAdapter"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <!-- 数据查询模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Data_Query"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <!-- 软件帮助模块 -->
+        <activity
+            android:name="com.android.help.Help"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.RuanJian"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Guiji"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.android.help.Cly"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.android.help.Wt"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.help.Lx"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 软件设置模块 -->
+        <activity
+            android:name="com.android.antiexplosionphone.Soft_Config"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="com.android.utils.ShowDataTableActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.android.bluetooth.BluetoothClientService" />
+
+
+        <!-- AChao  -->
+        <activity
+            android:name="com.android.MP.MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.android.MP.Data"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name="com.android.MP.Zhiliangpingjia"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.android.MPFragment.ZuanKongGuiJi"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name="com.android.MPFragment.Amplify_horizontal"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name="com.android.MPFragment.Amplify_vertical"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name="com.android.antiexplosionphone.Set_Parameter"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

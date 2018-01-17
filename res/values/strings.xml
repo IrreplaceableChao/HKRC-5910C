@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">AntiExplosionZN</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_name0">YZG4.8</string>
+    <string name="title_name1">矿用钻孔轨迹测量装置</string>
+    <string name="title_name2">控制软件</string>
+    <string name="title_name3">V6.0</string>
+    <string name="help_code">显示评价软件V6.0</string>
+    <string name="title_activity_main">轨迹测量</string>
+    <string name="title_self_detection">仪器自检</string>
+    <string name="title_set_start">设置及启动</string>
+    <string name="title_point_collect">确定有效点</string>
+    <string name="title_data_receive">数据接收</string>
+    <string name="title_leaning_pipeaadapter">探管适配</string>
+    <string name="title_help">软件帮助</string>
+    <string name="title_data_query">数据查询</string>
+    <string name="title_soft_config">软件设置</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="地质参数">地质参数</string>
+    <string name="软件帮助">软件帮助</string>
+    <string name="软件退出">软件退出</string>
+    <string name="数据查询">数据查询</string>
+    <string name="探管适配">探管适配</string>
+    <string name="探管设置">探管设置</string>
+    <string name="接收评价">接收评价</string>
+    <string name="轨迹测量">轨迹测量</string>
+    <string name="范围">磁偏角：输入范围-12.00～+5.00，保留2位小数\n子午线收敛角：输入范围-1.50～+1.50，保留2位小数</string>
+    <string name="保存">保存地质参数</string>
+</resources>
