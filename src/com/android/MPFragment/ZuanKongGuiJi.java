@@ -67,7 +67,7 @@ public class ZuanKongGuiJi extends FragmentActivity implements View.OnClickListe
         fanhui.setOnClickListener(this);
         amplify.setOnClickListener(this);
         list.add(new Vertical());
-//        list.add(new Horizontal());
+        list.add(new Horizontal());
 
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);

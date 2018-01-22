@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import com.android.MP.Data;
 import com.android.antiexplosionphone.R;
 import com.android.utils.FormulaUtil;
+import com.android.utils.Utils;
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition;
 import com.github.mikephil.charting.components.XAxis;
@@ -20,59 +20,49 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.ChartTouchListener;
 import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static com.android.MP.Data.ks;
+import static com.android.MP.Data.sx;
 import static com.android.antiexplosionphone.R.id.chart;
 import static com.android.utils.FormulaUtil.$E$2;
 import static com.android.utils.FormulaUtil.$F$1;
-
+import static com.android.utils.FormulaUtil.shang;
+import static com.android.utils.FormulaUtil.$C$2;
+import static com.android.utils.FormulaUtil.kongshen;
 
 public class Vertical extends Fragment implements OnChartGestureListener, OnChartValueSelectedListener {
 
     private LineChart mLineChart;
     private View view;
-    private int[] x;
-    private int[] y;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_vertical, container, false);
         findview();
-        setTopBottom();
+        setTopBottom((float) shang, getSX_Max() + 30);
         init();
         return view;
     }
 
     private void findview() {
-        mLineChart = (LineChart) view.findViewById(chart);
+        mLineChart =  view.findViewById(chart);
     }
 
     private void init() {
-//      mTf = Typeface.createFromAsset(getAssets(), "OpenSans-Bold.ttf");
         XAxis xAxis = mLineChart.getXAxis();
-//      YAxis leftAxis = mLineChart.getAxisLeft();
-//       xAxis.setSpaceBetweenLabels(4);  //x轴间距
         mLineChart.getAxisRight().setEnabled(false);//设置y轴的右侧是否显示坐标
-//		mLineChart.getAxisLeft().setEnabled(false);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // 设置X轴的位置
-//        xAxis.setTypeface(mTf); // 设置字体
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // 设置X轴坐标显示的位置
         xAxis.setEnabled(true);
-        // 上面第一行代码设置了false,所以下面第一行即使设置为true也不会绘制AxisLine
         xAxis.setDrawAxisLine(true);
-        // 前面xAxis.setEnabled(false);则下面绘制的Grid不会有"竖的线"（与X轴有关）
         LineData mLineData = getLineData();
         showChart(mLineChart, mLineData, Color.rgb(114, 188, 223));//这里调背景颜色
-//        YAxis leftAxis = mLineChart.getAxisLeft();
-//        leftAxis.setValueFormatter(new MyYAxisValueFormatter());
     }
 
     @Override
@@ -83,13 +73,8 @@ public class Vertical extends Fragment implements OnChartGestureListener, OnChar
     // 设置显示的样式
     private void showChart(LineChart lineChart, LineData lineData, int color) {
         lineChart.setDrawBorders(false);  //是否在折线图上添加边框
-        // no description text
-//        lineChart.setDescription("");// 数据描述
-        // 如果没有数据的时候，会显示这个，类似listview的emtpyview
-//        lineChart.setNoDataTextDescription("You need to provide data for the chart.");
-        // enable / disable grid background
         lineChart.setDrawGridBackground(false); // 是否显示表格颜色
-        lineChart.setGridBackgroundColor(Color.WHITE & 0x70FFFFFF); // 表格的的颜色，在这里是是给颜色设置一个透明度
+        lineChart.setGridBackgroundColor(0x70FFFFFF); // 表格的的颜色，在这里是是给颜色设置一个透明度
         // enable touch gestures
         lineChart.setTouchEnabled(true); // 设置是否可以触摸
         // enable scaling and dragging
@@ -100,15 +85,6 @@ public class Vertical extends Fragment implements OnChartGestureListener, OnChar
         lineChart.setBackgroundColor(color);// 设置背景
         // add data
         lineChart.setData(lineData);  // 设置数据
-//        // get the legend (only possible after setting data)
-//        Legend mLegend = lineChart.getLegend(); // 设置比例图标示，就是那个一组y的value的
-//        // modify the legend ...
-//        // mLegend.setPosition(LegendPosition.LEFT_OF_CHART);
-//        mLegend.setForm(Legend.LegendForm.LINE);// 样式circle
-//        mLegend.setFormSize(6f);// 字体
-//        mLegend.setTextColor(Color.WHITE);// 颜色
-////      mLegend.setTypeface(mTf);// 字体
-//        lineChart.animateX(2500); // 立即执行的动画,x轴
     }
 
     /**
@@ -119,65 +95,67 @@ public class Vertical extends Fragment implements OnChartGestureListener, OnChar
      */
     private LineData getLineData() {
         int length = ks.length;
-        FormulaUtil formula = new FormulaUtil(ks, Data.qj, Data.fw,length);
-        x = new int[length];
-        y = new int[length];
-        int x_min = 0;
-        int y_min = 0;
-        for (int i = 0; i <length; i++) {
-            x[i] =(int) ((formula.y_()[i] * Math.cos((270 + $E$2 + 0) * $F$1) - formula.x_()[i] * Math.sin((270 + $E$2 + 0) * $F$1)));
-            y[i]= (int) (formula.z_()[i]);
+        FormulaUtil formula = new FormulaUtil(ks, Data.qj, Data.fw, length);
+        float[] x = new float[length];
+        float[] y = new float[length];
+        double x_min = 0;
+        double y_min = 0;
+        for (int i = 0; i < length; i++) {
+            x[i] = Float.parseFloat(String.valueOf(Utils.BD(formula.y_()[i] * Math.cos((270 + $E$2 + 0) * $F$1) - formula.x_()[i] * Math.sin((270 + $E$2 + 0) * $F$1))));
+            y[i] = Float.parseFloat(String.valueOf(sx[i]));
             if (x[i] < x_min) x_min = x[i];
             if (y[i] < y_min) y_min = y[i];
         }
 
         /*********画一个原点*****/
-        ArrayList<Entry> y_QD = new ArrayList<Entry>();
+        ArrayList<Entry> y_QD = new ArrayList<>();
         y_QD.add(new Entry(y[0], x[0]));
         LineDataSet lineDataSet_QD = new LineDataSet(y_QD, "起点" /*显示在比例图上*/);
-        lineDataSet_QD.setLineWidth(2f); // 线宽
+        lineDataSet_QD.setLineWidth(1.75f); // 线宽
         lineDataSet_QD.setDrawCircles(true);//取消小圆圈
         lineDataSet_QD.setDrawCircleHole(false);
-        int color1 = Color.argb(254,30,144,255);// 半透明的紫色
+        int color1 = Color.argb(254, 30, 144, 255);// 半透明的紫色
         lineDataSet_QD.setCircleColor(color1);
         lineDataSet_QD.setColor(color1);// 显示颜色
-        lineDataSet_QD.setCircleSize(5);
         lineDataSet_QD.setDrawValues(false);//设置折线图中的坐标点
         lineDataSet_QD.setDrawHighlightIndicators(false);
         lineDataSet_QD.setDrawVerticalHighlightIndicator(false);
         /*********结束*****/
-        ArrayList<Entry> Values = new ArrayList<Entry>();
-//		假设：任意一个采集点的东西坐标为E，南北坐标为N，垂直标高为H，A为设计磁方位角
-//		则对于垂直投影图而言：纵坐标值不变，仍为H
+        /*********设计曲线*****/
+        int sj_x = (int)(kongshen*Math.abs(Math.cos($C$2*$F$1)));
+        ArrayList<Entry> y_SJ = new ArrayList<>();
+        y_SJ.add(new Entry(0, 0));
+        y_SJ.add(new Entry(sj_x, 0));
+        LineDataSet lineDataSet_SJ = new LineDataSet(y_SJ, "设计曲线" /*显示在比例图上*/);
+        lineDataSet_SJ.setLineWidth(1.25f); // 线宽
+        lineDataSet_SJ.setDrawCircles(false);//取消小圆圈
+        lineDataSet_SJ.setColor(Color.WHITE);// 显示颜色
+        lineDataSet_SJ.setDrawValues(false);//设置折线图中的坐标点
+        lineDataSet_SJ.setDrawHighlightIndicators(false);
+        lineDataSet_SJ.setDrawVerticalHighlightIndicator(false);
+        /*********结束*****/
+
+        /*********开始画实钻设计曲线*****/
+        ArrayList<Entry> Values = new ArrayList<>();
         for (int i = 0; i < x.length; i++) {
             Values.add(new Entry(x[i], y[i]));
         }
         // create a dataset and give it a type y轴的数据集合
-//		lineDataSets.add(lineDataSet); // add the datasets
         LineDataSet lineDataSet1 = new LineDataSet(Values, "钻孔曲线    横轴（设计方位线）,纵轴（上下偏差）" /*显示在比例图上*/);
-//         mLineDataSet.setFillAlpha(110);
-//         mLineDataSet.setFillColor(Color.RED);
         //用y轴的集合来设置参数
         lineDataSet1.setLineWidth(1.75f); // 线宽
         lineDataSet1.setDrawCircles(false);//取消小圆圈
 //		lineDataSet1.setCircleSize(1f);// 显示的圆形大小
         lineDataSet1.setColor(Color.RED);// 显示颜色
         lineDataSet1.setDrawValues(false);//设置折线图中的坐标点
-//		lineDataSet1.setDrawCircleHole(false);
-//		lineDataSet1.setCircleColor(Color.WHITE);// 圆形的颜色
-//		lineDataSet1.setHighLightColor(Color.WHITE); // 高亮的线的颜色
-//		lineDataSet1.setDrawCubic(true); //设置是否允许曲线平滑
-//		lineDataSet1.setCubicIntensity(0.2f);//平滑度
-        // 關閉 highlight 線
         lineDataSet1.setDrawHighlightIndicators(false);
-        // 設置垂直線
         lineDataSet1.setDrawVerticalHighlightIndicator(false);
+        /*********结束*****/
 
-
-        ArrayList<ILineDataSet> lineDataSets = new ArrayList<ILineDataSet>();
-//        lineDataSets.add(lineDataSet_sjqx);
+        ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
+        lineDataSets.add(lineDataSet_SJ);
         lineDataSets.add(lineDataSet1);
-//        lineDataSets.add(lineDataSet_QD);
+        lineDataSets.add(lineDataSet_QD);
         // create a data object with the datasets
         LineData lineData = new LineData(lineDataSets);
         return lineData;
@@ -233,53 +211,42 @@ public class Vertical extends Fragment implements OnChartGestureListener, OnChar
 
     }
 
-    public class MyYAxisValueFormatter implements IAxisValueFormatter {
-
-        private DecimalFormat mFormat;
-
-        public MyYAxisValueFormatter () {
-            mFormat = new DecimalFormat("###,###,##0"); // use one decimal
-        }
-
-//        @Override
-//        public String getFormattedValue(float value, YAxis yAxis) {
-//            return mFormat.format(value/100); // e.g. append a dollar-sign
-//        }
-
-        @Override
-        public String getFormattedValue(float value, AxisBase axis) {
-            return null;
-        }
-    }
-
-    public void setTopBottom(){
+    public void setTopBottom(float line, float maximum) {
 //        Typeface tf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
-
-        LimitLine ll1 = new LimitLine(3f, "Upper Limit");
+        if (line == 0) line = 3;
+        if (maximum == 0) maximum = 50;
+        LimitLine ll1 = new LimitLine(line, "上偏差参考线");
         ll1.setLineWidth(1f);
         ll1.enableDashedLine(10f, 10f, 0f);
         ll1.setLabelPosition(LimitLabelPosition.RIGHT_TOP);
         ll1.setTextSize(10f);
-//        ll1.setTypeface(tf);
+//      ll1.setTypeface(tf);
 
-        LimitLine ll2 = new LimitLine(-3f, "Lower Limit");
+        LimitLine ll2 = new LimitLine(-line, "下偏差参考线");
         ll2.setLineWidth(1f);
         ll2.enableDashedLine(10f, 10f, 0f);
         ll2.setLabelPosition(LimitLabelPosition.RIGHT_BOTTOM);
         ll2.setTextSize(10f);
-//        ll2.setTypeface(tf);
-
+//      ll2.setTypeface(tf);
         YAxis leftAxis = mLineChart.getAxisLeft();
         leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
         leftAxis.addLimitLine(ll1);
         leftAxis.addLimitLine(ll2);
-        leftAxis.setAxisMaximum(50f);
-        leftAxis.setAxisMinimum(-50f);
+        leftAxis.setAxisMaximum(maximum);
+        leftAxis.setAxisMinimum(-maximum);
         //leftAxis.setYOffset(20f);
         leftAxis.enableGridDashedLine(10f, 10f, 0f);//虚线绘制
         leftAxis.setDrawZeroLine(false);   //绘制0的线
-
         // limit lines are drawn behind data (and not on top)
         leftAxis.setDrawLimitLinesBehindData(true);
+    }
+
+    public float getSX_Max() {
+        double max;
+        max = Data.sx[0];
+        for (int i = 0; i < Data.sx.length; i++) {
+            if (Math.abs(Data.sx[i]) > max) max = Math.abs(Data.sx[i]);
+        }
+        return (float) Utils.BD(max);
     }
 }

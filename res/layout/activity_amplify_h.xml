@@ -16,12 +16,4 @@
         android:background="@drawable/cuohao"
         android:layout_alignParentRight="true"
         android:id="@+id/button4"/>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/qidian"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="334dp"
-        android:id="@+id/imageView"/>
 </RelativeLayout>

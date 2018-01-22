@@ -581,6 +581,4 @@ public class Data extends Activity implements View.OnClickListener {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-
 }
